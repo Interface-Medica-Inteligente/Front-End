@@ -1,8 +1,10 @@
+// @flow
+import * as React from 'react'
 import './styles.css'
 import Input from '../../components/Input'
 import Button from '../../components/Button'
 
-const LoginScreen = () => {
+const LoginScreen = (): React.Node => {
     return(
         <div className='container'>
             <div className='content'>

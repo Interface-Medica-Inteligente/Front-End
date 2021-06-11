@@ -1,6 +1,8 @@
+// @flow
+import * as React from 'react'
 import './styles.css'
 
-const Button = () => {
+const Button = (): React.Node => {
     return(
         <button className='button'>
             Entrar
