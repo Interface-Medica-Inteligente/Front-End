@@ -1,11 +1,13 @@
+// @flow
+import * as React from 'react'
 import './styles.css'
 
-const Input = () => {
-    return(
-        <div className='container-input'>
-            <input className='input-text' placeholder='Text'/>
-        </div>
-    )
+const Input = (): React.Node => {
+  return (
+    <div className='container-input'>
+      <input className='input-text' placeholder='Text' />
+    </div>
+  )
 }
 
 export default Input
