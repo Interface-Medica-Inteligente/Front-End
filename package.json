@@ -63,6 +63,7 @@
       "test",
       "jest",
       "expect",
+      "alert",
       "__DEV__"
     ]
   }
