@@ -38,6 +38,9 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@commitlint/prompt-cli": "^12.1.4",
     "flow-bin": "^0.152.0",
     "husky": "^6.0.0"
   }
