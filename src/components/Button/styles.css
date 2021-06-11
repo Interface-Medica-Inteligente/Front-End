@@ -1,0 +1,21 @@
+.button {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 14px 41px;
+    width: 130px;
+    height: 49px;
+    background: #00CEC8;
+    border-radius: 10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.button:hover {
+    background: #02A5A0;
+}

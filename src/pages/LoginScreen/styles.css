@@ -1,0 +1,55 @@
+.container {
+    background-image: url('../../assets/background-login.svg');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 62px;
+}
+
+.login-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 56px;
+    line-height: 66px;
+    color: #00CEC8;
+}
+
+.container-register {
+    position: absolute;
+    bottom: 45px;
+    height: 21px;
+    margin-left: 59px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.link-register {
+    height: 21px;
+    margin-left: 14px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #00CEC8;
+    text-decoration: none;
+}
+
+.link-register:hover {
+    color: #02A5A0;
+}
