@@ -4,10 +4,14 @@ import './styles.css'
 import Input from '../../components/Input'
 import Button from '../../components/Button'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { Actions as DoctorActions } from '../../reducers/doctor'
 
 const LoginScreen = (): React.Node => {
+  const dispatch = useDispatch()
+
   const handleSubmit = () => {
-    alert('Logado')
+    dispatch(DoctorActions.entities.setDoctor({ token: 'hfsghdjhjsd' }))
   }
 
   return (
