@@ -3,6 +3,7 @@ import * as React from 'react'
 import './styles.css'
 import Input from '../../components/Input'
 import Button from '../../components/Button'
+import { Link } from 'react-router-dom'
 
 const LoginScreen = (): React.Node => {
   const handleSubmit = () => {
@@ -10,15 +11,15 @@ const LoginScreen = (): React.Node => {
   }
 
   return (
-    <div className='container'>
+    <div className='container-login'>
       <div className='content'>
         <p className='login-text'>Login</p>
         <Input placeholder='E-mail' />
         <Input placeholder='Senha' />
         <Button title='Entrar' onClick={handleSubmit} />
       </div>
-      <div className='container-register'>
-        Não possui cadastro?<a className='link-register' href='https://google.com.br' target='blank'>Cadastre-se</a>
+      <div className='container-button-register'>
+        Não possui cadastro?<Link className='link-register' to='/register'>Cadastre-se</Link>
       </div>
     </div>
   )

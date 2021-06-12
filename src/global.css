@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline-style: none;
+  border: none;
+}
+
+body {
+  background-color: #FFFFFF;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container-routes {
+  height: 100vh;
+  width: 100vw;
+}

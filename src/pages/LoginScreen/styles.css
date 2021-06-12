@@ -1,4 +1,4 @@
-.container {
+.container-login {
     background-image: url('../../assets/background-login.svg');
     background-position: bottom right;
     background-repeat: no-repeat;
@@ -25,7 +25,7 @@
     color: #00CEC8;
 }
 
-.container-register {
+.container-button-register {
     position: absolute;
     bottom: 45px;
     height: 21px;

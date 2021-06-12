@@ -1,12 +1,17 @@
 // @flow
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import LoginScreen from './pages/LoginScreen'
+import { BrowserRouter } from 'react-router-dom'
+
+import Routes from './routes'
+
+import './global.css'
 
 ReactDOM.render(
   <React.StrictMode>
-    <LoginScreen />
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 )
