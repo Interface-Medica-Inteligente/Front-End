@@ -3,9 +3,18 @@
 [include]
 
 [libs]
-
-[lints]
+flow/
 
 [options]
+emoji=true
+
+[lints]
+signature-verification-failure=warn
 
 [strict]
+
+[untyped]
+.*/node_modules/.*
+
+[version]
+^0.101.0

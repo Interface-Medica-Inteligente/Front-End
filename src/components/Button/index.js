@@ -2,10 +2,17 @@
 import * as React from 'react'
 import './styles.css'
 
-const Button = (): React.Node => {
+type Props = {
+  title: string,
+  onClick(): void
+}
+
+const Button = (props: Props): React.Node => {
+  const { title, onClick } = props
+
   return (
-    <button className='button'>
-      Entrar
+    <button className='button' onClick={onClick}>
+      {title}
     </button>
   )
 }

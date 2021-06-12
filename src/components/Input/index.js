@@ -2,10 +2,16 @@
 import * as React from 'react'
 import './styles.css'
 
-const Input = (): React.Node => {
+type Props = {
+  placeholder: string
+}
+
+const Input = (props: Props): React.Node => {
+  const { placeholder } = props
+
   return (
     <div className='container-input'>
-      <input className='input-text' placeholder='Text' />
+      <input className='input-text' placeholder={placeholder} />
     </div>
   )
 }
