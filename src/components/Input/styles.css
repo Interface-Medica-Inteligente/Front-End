@@ -11,6 +11,8 @@
 }
 
 .input-text {
+    display: flex;
+    flex: 1;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
