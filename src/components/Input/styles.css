@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     padding: 0px 17px;
+    background-color: #FFFFFF;
 }
 
 .input-text {
@@ -22,6 +23,15 @@
 }
 
 .input-text::placeholder {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #828282;
+}
+
+select:invalid {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
