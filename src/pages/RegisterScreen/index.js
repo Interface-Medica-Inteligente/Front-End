@@ -6,6 +6,7 @@ import Button from '../../components/Button'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { Actions as DoctorActions } from '../../reducers/doctor'
+import { genre } from '../../constants'
 
 const RegisterScreen = (): React.Node => {
   const dispatch = useDispatch()
@@ -21,7 +22,7 @@ const RegisterScreen = (): React.Node => {
         <Input placeholder='Nome' />
         <Input placeholder='CPF' />
         <Input placeholder='CRM' />
-        <Input placeholder='Sexo' inputType='select' />
+        <Input placeholder='Sexo' options={genre} inputType='select' />
         <Input placeholder='E-mail' />
         <Input placeholder='Senha' />
         <div className='container-buttons'>

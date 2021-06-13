@@ -4,28 +4,36 @@ import './styles.css'
 
 type Props = {
   placeholder: string,
-  inputType?: string
+  inputType?: string,
+  options?: { value: any, title: string }[],
+  value?: string,
+  onChange?: (value: string) => void
 }
 
 const Input = (props: Props): React.Node => {
-  const { placeholder, inputType } = props
+  const { inputType, options, ...rest } = props
   if (inputType === 'select') {
-    return (
-      <div className='container-input'>
-        <select className='input-text' placeholder={placeholder} type={inputType}>
-          <option value='M'>
-            Masculino
-          </option>
-          <option value='F'>
-            Feminino
-          </option>
-        </select>
-      </div>
-    )
+    return <Select {...props} />
   }
+
   return (
     <div className='container-input'>
-      <input className='input-text' placeholder={placeholder} type={inputType} />
+      <input className='input-text' type={inputType} {...rest} />
+    </div>
+  )
+}
+
+const Select = (props: Props) => {
+  const { options, value, ...rest } = props
+
+  return (
+    <div className='container-input'>
+      <select className='input-text' required value={value} {...rest}>
+        <option value='' disabled selected>Sexo</option>
+        {options && options.map(option => (
+          <option key={option.value} value={option.value}>{option.title}</option>
+        ))}
+      </select>
     </div>
   )
 }

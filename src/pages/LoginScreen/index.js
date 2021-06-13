@@ -11,7 +11,7 @@ const LoginScreen = (): React.Node => {
   const dispatch = useDispatch()
 
   const handleSubmit = () => {
-    dispatch(DoctorActions.entities.setDoctor({ token: 'hfsghdjhjsd' }))
+    dispatch(DoctorActions.ui.requestLogin({ ts: 'ts' }))
   }
 
   return (
