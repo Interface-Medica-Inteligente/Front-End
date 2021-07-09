@@ -9,6 +9,14 @@ const Api = {
   login: ({ email, password }) => api.post('/medico/authenticate', {
     email,
     senha: password
+  }),
+  register: ({ name, cpf, crm, genre, email, password }) => api.post('/medico', {
+    nome: name,
+    senha: password,
+    email,
+    sexo: genre,
+    crm,
+    cpf
   })
 }
 

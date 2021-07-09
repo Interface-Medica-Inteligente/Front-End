@@ -15,8 +15,20 @@ function * requestLogin (action): Saga<*> {
   yield put(Actions.entities.setDoctor({ token: 'acafawfwe' }))
 }
 
+function * requestRegister (action): Saga<*> {
+  const { payload } = action
+  const response = yield call(Api.register, payload)
+
+  if (!response.ok) {
+    alert('Erro ao realizar o cadastro')
+    return
+  }
+  yield put(Actions.entities.setDoctor({ token: 'acafawfwe' }))
+}
+
 export default function * sagas (): Saga<*> {
   yield all([
-    takeLatest(Actions.ui.requestLogin, requestLogin)
+    takeLatest(Actions.ui.requestLogin, requestLogin),
+    takeLatest(Actions.ui.requestRegister, requestRegister)
   ])
 }

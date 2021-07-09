@@ -7,31 +7,31 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { Actions as DoctorActions } from '../../reducers/doctor'
 import { genre } from '../../constants'
+import { useForm } from 'react-hook-form'
 
 const RegisterScreen = (): React.Node => {
   const dispatch = useDispatch()
 
-  const handleSubmit = () => {
-    dispatch(DoctorActions.entities.setDoctor({ token: 'hfsghdjhjsd' }))
-  }
+  const { register, handleSubmit } = useForm()
+  const onSubmit = data => dispatch(DoctorActions.ui.requestRegister(data))
 
   return (
     <div className='container-register'>
-      <div className='content'>
+      <form className='content' onSubmit={handleSubmit(onSubmit)}>
         <p className='register-text'>Cadastro</p>
-        <Input placeholder='Nome' />
-        <Input placeholder='CPF' />
-        <Input placeholder='CRM' />
-        <Input placeholder='Sexo' options={genre} inputType='select' />
-        <Input placeholder='E-mail' />
-        <Input placeholder='Senha' />
+        <Input placeholder='Nome' {...register('name')} />
+        <Input placeholder='CPF' {...register('cpf')} />
+        <Input placeholder='CRM' {...register('crm')} />
+        <Input placeholder='Sexo' options={genre} inputType='select' {...register('genre')} />
+        <Input placeholder='E-mail' {...register('email')} />
+        <Input placeholder='Senha' {...register('password')} />
         <div className='container-buttons'>
           <Button title='Cadastrar' onClick={handleSubmit} />
           <div className='container-button-login'>
             Já possui cadastro?<Link className='link-login' to='/'>Login</Link>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   )
 }

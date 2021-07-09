@@ -15,10 +15,13 @@ const doctorUiSlice = createSlice({
   name: 'doctor/ui',
   initialState,
   reducers: {
-    requestLogin: (state: State) => {
+    requestLogin: () => {
       return { fetching: true, error: null }
     },
-    failureLogin: (state: State, action: PayloadAction<string>) => {
+    requestRegister: () => {
+      return { fetching: true, error: null }
+    },
+    failure: (action: PayloadAction<string>) => {
       return { fetching: false, error: action.payload }
     }
   }
