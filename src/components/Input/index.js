@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react'
 import './styles.css'
 
@@ -10,25 +9,25 @@ type Props = {
   onChange?: (value: string) => void
 }
 
-const Input = (props: Props): React.Node => {
+const Input = React.forwardRef((props: Props, ref: any): React.Node => {
   const { inputType, options, ...rest } = props
   if (inputType === 'select') {
-    return <Select {...props} />
+    return <Select ref={ref} {...props} />
   }
 
   return (
     <div className='container-input'>
-      <input className='input-text' type={inputType} {...rest} />
+      <input ref={ref} className='input-text' type={inputType} {...rest} />
     </div>
   )
-}
+})
 
-const Select = (props: Props) => {
+const Select = React.forwardRef((props: Props, ref: any) => {
   const { options, value, ...rest } = props
 
   return (
     <div className='container-input'>
-      <select className='input-text' required value={value} {...rest}>
+      <select ref={ref} className='input-text' required value={value} {...rest}>
         <option value='' disabled selected>Sexo</option>
         {options && options.map(option => (
           <option key={option.value} value={option.value}>{option.title}</option>
@@ -36,6 +35,6 @@ const Select = (props: Props) => {
       </select>
     </div>
   )
-}
+})
 
 export default Input

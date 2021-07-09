@@ -1,9 +1,17 @@
 // @flow
 import type { Saga } from 'redux-saga'
-import { all, put, takeLatest } from 'redux-saga/effects'
+import { all, call, put, takeLatest } from 'redux-saga/effects'
 import { Actions } from '../reducers/doctor'
+import Api from '../services/api'
 
 function * requestLogin (action): Saga<*> {
+  const { payload } = action
+  const response = yield call(Api.login, payload)
+
+  if (!response.ok) {
+    alert('Erro ao realizar login')
+    return
+  }
   yield put(Actions.entities.setDoctor({ token: 'acafawfwe' }))
 }
 
