@@ -16,22 +16,22 @@ const RevenueScreen = (): React.Node => {
   return (
     <div className='container-revenue'>
       <form className='card'>
-        <div className='row'>
-          <Input label='Paciente' width={0.7} />
+        <div className='row-revenue'>
+          <Input label='Paciente' width={1} />
         </div>
 
-        <div className='row'>
-          <Input label='Endereço' width={0.7} />
+        <div className='row-revenue'>
+          <Input label='Endereço' width={1} />
         </div>
 
         <p>Prescrição:</p>
-        <div className='row'>
+        <div className='row-revenue'>
           <Input label='Medicamento' width={0.3} />
           <Input label='Quantidade' width={0.2} />
           <Input label='Uso' width={0.2} />
         </div>
 
-        <div className='row'>
+        <div className='row-revenue'>
           <Input label='Descrição' width={1} />
         </div>
 

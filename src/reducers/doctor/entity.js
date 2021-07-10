@@ -17,7 +17,8 @@ const doctorUiSlice = createSlice({
   reducers: {
     setDoctor: (state: State, action: PayloadAction<any>) => {
       return { ...state, ...action.payload }
-    }
+    },
+    logout: () => initialState
   }
 })
 

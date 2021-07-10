@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     height: 100vh;
-    width: 100vw;
+    width: 80%;
     display: flex;
     justify-content: center;
 }
@@ -17,17 +17,16 @@
     display: flex;
     flex-direction: column;
     align-self: center;
-    align-items: center;
     padding: 0 25px;
 }
 
-.row {
+.row-revenue {
     display: flex;
     flex-direction: row;
+    width: 100%;
     margin-top: 5px;
     margin-bottom: 5px;
-    width: 100%;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .row-select {

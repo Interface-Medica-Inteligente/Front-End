@@ -1,4 +1,9 @@
 .container-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
     margin-top: 19px;
     margin-bottom: 19px;
     border: 2px solid #828282;

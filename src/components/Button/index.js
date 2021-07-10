@@ -4,7 +4,7 @@ import './styles.css'
 
 type Props = {
   title: string,
-  onClick(): void
+  onClick?: () => void
 }
 
 const Button = (props: Props): React.Node => {
