@@ -27,7 +27,9 @@ const SideBar = ({ children }) => {
           Sair
         </div>
       </div>
-      {children}
+      <div className='container-children'>
+        {children}
+      </div>
     </div>
   )
 }

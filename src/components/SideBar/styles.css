@@ -65,3 +65,10 @@
     font-size: 24px;
     line-height: 28px;
 }
+
+.container-children {
+    width: 80%;
+    height: 100vh;
+    background-color: #E5E5E5;
+    overflow-y: scroll;
+}

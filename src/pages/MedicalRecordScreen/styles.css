@@ -1,8 +1,8 @@
 .container-medical-record {
-    background-color: gray;
     display: flex;
-    height: 100vh;
-    width: 80%;
+    flex: 1;
+    height: auto;
+    flex-direction: column;
     justify-content: center;
 }
 
