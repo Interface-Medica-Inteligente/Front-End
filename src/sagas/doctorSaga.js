@@ -20,7 +20,7 @@ function * requestRegister (action): Saga<*> {
   const response = yield call(Api.register, payload)
 
   if (!response.ok) {
-    https://meet.google.com/ecb-wuqf-rtx alert('Erro ao realizar o cadastro')
+    alert('Erro ao realizar o cadastro')
     return
   }
   yield put(Actions.entities.setDoctor({ token: 'acafawfwe' }))
