@@ -32,15 +32,15 @@ const RevenueScreen = (): React.Node => {
         </div>
 
         <div className='row-revenue'>
-          <Input label='Descrição' width={1} />
+          <Input label='Descrição' width={1} height={2} />
         </div>
 
-        <div className='row-select'>
+        <div className='row-revenue-select'>
           <div>
             <Input label='1ª Via Farmácia' width={0.2} />
             <Input label='2ª via Paciente' width={0.2} />
           </div>
-          <Input label='Data' width={1} />
+          <Input label='Data' width={0.3} />
         </div>
 
         <div className='row-buttons'>

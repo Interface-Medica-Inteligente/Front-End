@@ -21,11 +21,17 @@
     margin-top: 50px;
 }
 
-.row {
+.row-report {
     display: flex;
     flex-direction: row;
-    margin-top: 5px;
+    width: 100%;
+    margin-top: 15px;
     margin-bottom: 5px;
+    justify-content: space-between;
+}
+
+.row-report-select {
+    display: flex;
 }
 
 .row-buttons {
