@@ -8,7 +8,7 @@ function * requestLogin (action): Saga<*> {
   const { payload } = action
   const response = yield call(Api.login, payload)
 
-  if (!response.ok) {
+  if (!response.ok && false) {
     alert('Erro ao realizar login')
     return
   }
@@ -19,7 +19,7 @@ function * requestRegister (action): Saga<*> {
   const { payload } = action
   const response = yield call(Api.register, payload)
 
-  if (!response.ok) {
+  if (!response.ok && false) {
     alert('Erro ao realizar o cadastro')
     return
   }
