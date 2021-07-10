@@ -8,7 +8,7 @@ function * requestLogin (action): Saga<*> {
   const { payload } = action
   const response = yield call(Api.login, payload)
 
-  if (!response.ok && false) {
+  if (!response.ok) {
     alert('Erro ao realizar login')
     return
   }
@@ -19,8 +19,8 @@ function * requestRegister (action): Saga<*> {
   const { payload } = action
   const response = yield call(Api.register, payload)
 
-  if (!response.ok && false) {
-    alert('Erro ao realizar o cadastro')
+  if (!response.ok) {
+    https://meet.google.com/ecb-wuqf-rtx alert('Erro ao realizar o cadastro')
     return
   }
   yield put(Actions.entities.setDoctor({ token: 'acafawfwe' }))
