@@ -1,11 +1,8 @@
 .container-revenue {
-    background-color: gray;
-    background-position: bottom right;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100vh;
-    width: 80%;
     display: flex;
+    flex: 1;
+    height: auto;
+    flex-direction: column;
     justify-content: center;
 }
 
