@@ -18,8 +18,7 @@ const MedicalRecordScreen = (): React.Node => {
     <div className='container-medical-record'>
       <form className='card'>
         <div className='row-form'>
-          <Input label='Prontuário' width={0.3} />
-          <Input label='Paciente' width={0.7} />
+          <Input label='Paciente' width={1} />
         </div>
 
         <div className='row-form'>

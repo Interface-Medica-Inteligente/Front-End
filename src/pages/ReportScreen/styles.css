@@ -14,7 +14,6 @@
     display: flex;
     flex-direction: column;
     align-self: center;
-    align-items: center;
     margin-top: 50px;
 }
 
@@ -27,8 +26,13 @@
     justify-content: space-between;
 }
 
-.row-report-select {
+.row-report-button-add {
     display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    justify-content: center;
 }
 
 .row-buttons {
@@ -39,3 +43,10 @@
     justify-content: space-around;
 }
 
+.container-medicines {
+    width: 65%;
+}
+
+.container-month {
+    width: 25%;
+}
