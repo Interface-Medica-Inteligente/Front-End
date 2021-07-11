@@ -4,6 +4,7 @@
     height: auto;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .card {
@@ -14,6 +15,8 @@
     display: flex;
     flex-direction: column;
     align-self: center;
+    margin-bottom: 50px;
+    padding: 20px 0;
 }
 
 .row-form {
