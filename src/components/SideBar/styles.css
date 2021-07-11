@@ -52,6 +52,10 @@
     color: #00CEC8;
 }
 
+.disabled {
+    opacity: 50%;
+}
+
 .logout {
     display: flex;
     color: #FFFFFF;
