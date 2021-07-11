@@ -5,6 +5,7 @@ type Props = {
   placeholder?: string,
   label?: string,
   width?: number,
+  height?: number,
   inputType?: string,
   options?: { value: any, title: string }[],
   value?: string,
@@ -12,7 +13,7 @@ type Props = {
 }
 
 const Input = React.forwardRef((props: Props, ref: any): React.Node => {
-  const { inputType, options, label, width, ...rest } = props
+  const { inputType, options, label, width, height, ...rest } = props
 
   const [inputWidth, setInputWidth] = React.useState((window.innerWidth * 0.8 * 0.9 * width) - 80)
 
@@ -29,7 +30,7 @@ const Input = React.forwardRef((props: Props, ref: any): React.Node => {
   return (
     <div className='container-input'>
       {label && <p>{label}:</p>}
-      <div className='input' style={{ width: inputWidth }}>
+      <div className='input' style={{ width: inputWidth, height: (window.innerHeight * 0.1 * height)}}>
         <input ref={ref} style={{ width: inputWidth }} className='input-text' type={inputType} {...rest} />
       </div>
     </div>

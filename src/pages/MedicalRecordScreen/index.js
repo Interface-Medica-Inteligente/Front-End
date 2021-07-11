@@ -7,43 +7,45 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { Actions as DoctorActions } from '../../reducers/doctor'
 import { genre } from '../../constants'
+import { useForm } from 'react-hook-form'
 
 const MedicalRecordScreen = (): React.Node => {
   const dispatch = useDispatch()
-
-  const handleSubmit = () => {
+  const { register, handleSubmit } = useForm()
+  const onSubmit = data => alert(JSON.stringify(data))
+  const handleSearch = (e) => {
+    e.preventDefault()
   }
 
   return (
     <div className='container-medical-record'>
-      <form className='card'>
+      <form className='card' onSubmit={handleSubmit(onSubmit)}>
         <div className='row-form'>
-          <Input label='Prontuário' width={0.3} />
-          <Input label='Paciente' width={0.7} />
+          <Input label='Paciente' width={1} {...register('name')} />
         </div>
 
         <div className='row-form'>
-          <Input label='Data de Nascimento' width={0.3} />
-          <Input label='Altura' width={0.2} />
-          <Input label='Peso' width={0.2} />
-          <Input label='CPF' width={0.3} />
+          <Input label='Data de Nascimento' width={0.3} {...register('birthDate')} />
+          <Input label='Altura' width={0.2} {...register('height')} />
+          <Input label='Peso' width={0.2} {...register('weight')} />
+          <Input label='CPF' width={0.3} {...register('cpf')} />
         </div>
 
         <div className='row-form'>
-          <Input placeholder='Sexo' options={genre} inputType='select' width={0.4} />
+          <Input placeholder='Sexo' options={genre} inputType='select' width={0.3} {...register('genre')} />
         </div>
 
         <div className='row-form'>
-          <Input label='Nome da mãe' width={1} />
+          <Input label='Nome da mãe' width={1} {...register('momName')} />
         </div>
 
         <div className='row-form'>
-          <Input label='Nome do pai' width={1} />
+          <Input label='Nome do pai' width={1} {...register('dadName')} />
         </div>
 
         <div className='row-buttons'>
-          <Button title='Buscar Prontuário' onClick={handleSubmit} />
-          <Button title='Cadastrar' onClick={handleSubmit} />
+          <Button title='Buscar Prontuário' onClick={handleSearch} />
+          <Button title='Cadastrar' />
         </div>
       </form>
     </div>
