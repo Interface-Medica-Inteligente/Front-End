@@ -27,7 +27,7 @@ const RevenueScreen = (): React.Node => {
     <div className='container-revenue'>
       <form className='card-revenue' onSubmit={handleSubmit(onSubmit)}>
         <div className='row-revenue'>
-          <Input label='Paciente' width={1} {...register('name')} />
+          <Input label='Nome completo do paciente' width={1} {...register('name')} />
         </div>
 
         <p className='title'>Prescrição:</p>

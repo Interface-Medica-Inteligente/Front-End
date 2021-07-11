@@ -27,7 +27,7 @@ const MedicalRecordScreen = (): React.Node => {
     <div className='container-medical-record'>
       <form className='card-medical-record' onSubmit={handleSubmit(onSubmit)}>
         <div className='row-form'>
-          <Input label='Paciente' width={1} {...register('name')} />
+          <Input label='Nome completo do paciente' width={1} {...register('name')} />
         </div>
 
         <div className='row-form'>
@@ -42,11 +42,11 @@ const MedicalRecordScreen = (): React.Node => {
         </div>
 
         <div className='row-form'>
-          <Input label='Nome da mãe' width={1} {...register('momName')} />
+          <Input label='Nome completo da mãe do paciente' width={1} {...register('momName')} />
         </div>
 
         <div className='row-form'>
-          <Input label='Nome do pai' width={1} {...register('dadName')} />
+          <Input label='Nome completo do pai do paciente' width={1} {...register('dadName')} />
         </div>
 
         <div className='row-buttons'>

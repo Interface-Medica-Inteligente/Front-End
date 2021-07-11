@@ -30,12 +30,12 @@ const ReportScreen = (): React.Node => {
         </div>
 
         <div className='row-report'>
-          <Input label='Nome completo da mãe paciente' width={0.7} {...register('momName')} />
+          <Input label='Nome completo da mãe do paciente' width={0.7} {...register('momName')} />
           <Input label='Peso do paciente(Kg)' width={0.15} {...register('weight')} />
           <Input label='Altura do paciente(cm)' width={0.15} {...register('height')} />
         </div>
       </div>
-      <div className='card-report'>
+      {/* <div className='card-report'>
         <div className='row-report'>
           <div className='container-medicines'>
             <p className='title'>Medicamentos</p>
@@ -53,7 +53,7 @@ const ReportScreen = (): React.Node => {
         <div className='row-report-button-add'>
           <Button title='Adicionar Medicamento' onClick={handleSearch} />
         </div>
-      </div>
+      </div> */}
 
       <div className='card-report'>
         <div className='row-report'>
