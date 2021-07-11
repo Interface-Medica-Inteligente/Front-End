@@ -1,0 +1,20 @@
+.recipe-item {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding: 20px;
+    margin: 20px 20px;
+}
+
+.recipe-item:hover {
+    background-color: silver;
+}
+
+.recipe-name {
+    color: black;
+}
+
+.recipe-date {
+    color: black;
+}

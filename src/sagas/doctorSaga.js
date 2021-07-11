@@ -8,11 +8,11 @@ function * requestLogin (action): Saga<*> {
   const { payload } = action
   const response = yield call(Api.login, payload)
 
-  if (!response.ok && false) {
+  if (!response.ok) {
     alert('Erro ao realizar login')
     return
   }
-  yield put(Actions.entities.setDoctor({ token: 'acafawfwe' }))
+  yield put(Actions.entities.setDoctor({ id: response.data }))
 }
 
 function * requestRegister (action): Saga<*> {
@@ -23,7 +23,7 @@ function * requestRegister (action): Saga<*> {
     alert('Erro ao realizar o cadastro')
     return
   }
-  yield put(Actions.entities.setDoctor({ token: 'acafawfwe' }))
+  yield put(Actions.entities.setDoctor({ id: response.data }))
 }
 
 export default function * sagas (): Saga<*> {

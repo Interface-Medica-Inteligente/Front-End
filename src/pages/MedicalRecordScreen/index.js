@@ -3,18 +3,24 @@ import * as React from 'react'
 import './styles.css'
 import Input from '../../components/Input'
 import Button from '../../components/Button'
-import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { Actions as DoctorActions } from '../../reducers/doctor'
+import { Actions as DialogActions } from '../../reducers/dialog'
+import { Actions as RecordActions } from '../../reducers/record'
 import { genre } from '../../constants'
 import { useForm } from 'react-hook-form'
+import useRecord from '../../hooks/useRecord'
 
 const MedicalRecordScreen = (): React.Node => {
   const dispatch = useDispatch()
-  const { register, handleSubmit } = useForm()
-  const onSubmit = data => alert(JSON.stringify(data))
+  const { register, handleSubmit, setValue } = useForm()
+
+  useRecord({ setValue })
+
+  const onSubmit = data => dispatch(RecordActions.ui.requestRegisterRecord(data))
+
   const handleSearch = (e) => {
     e.preventDefault()
+    dispatch(DialogActions.ui.openDialog('RECORD'))
   }
 
   return (

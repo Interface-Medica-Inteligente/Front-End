@@ -3,15 +3,16 @@ import * as React from 'react'
 import './styles.css'
 import Input from '../../components/Input'
 import Button from '../../components/Button'
-import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { Actions as DoctorActions } from '../../reducers/doctor'
 import { useForm } from 'react-hook-form'
+import useRecord from '../../hooks/useRecord'
 
 const ReportScreen = (): React.Node => {
-  const dispatch = useDispatch()
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, setValue } = useForm()
+
+  useRecord({ setValue })
+
   const onSubmit = data => alert(JSON.stringify(data))
+
   const handleSearch = (e) => {
     e.preventDefault()
   }
@@ -65,7 +66,7 @@ const ReportScreen = (): React.Node => {
         <div>
           <p>Paciente realizou tratamento prévio ou está em tratamento da doença?:</p>
           <div className='row-report'>
-            <Input data={[{ label: 'Sim', value: 'YES' }, { label: 'Não', value: 'NO' }]} inputType='radio' name='p' {...register('p')} />
+            <Input data={[{ label: 'Sim', value: 'YES' }, { label: 'Não', value: 'NO' }]} inputType='radio' name='treatment ' {...register('treatment')} />
           </div>
         </div>
         <div className='row-report'>

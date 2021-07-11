@@ -2,11 +2,13 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 export type State = {
+  id?: number,
   crm?: string,
   token?: string
 }
 
 const initialState: State = {
+  id: undefined,
   crm: undefined,
   token: undefined
 }

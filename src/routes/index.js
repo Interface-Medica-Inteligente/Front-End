@@ -7,7 +7,6 @@ import doctorSelector from '../selectors/doctorSelector'
 import AuthRouter from './AuthRouter'
 import SideBarRouter from './SideBarRouter'
 
-
 const Routes = (): React.Node => {
   const history = useHistory()
   const isLogged = useSelector(doctorSelector.isLogged)

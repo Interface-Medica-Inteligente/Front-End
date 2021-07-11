@@ -6,7 +6,7 @@ export const api = create({
 })
 
 const Api = {
-  login: ({ email, password }) => api.post('/medico/authenticate', {
+  login: ({ email, password }) => api.post('/medico/autenticar', {
     email,
     senha: password
   }),
@@ -17,7 +17,42 @@ const Api = {
     sexo: genre,
     crm,
     cpf
-  })
+  }),
+  registerRecord: ({ doctorId, name, birthDate, cpf, dadName, momName, genre, height, weight }) => api.post('/consulta/cadastrar-prontuario', {
+    paciente: {
+      cpf,
+      nome: name,
+      email: '',
+      sexo: genre,
+      dataNascimento: birthDate,
+      nomeMae: momName,
+      nomePai: dadName
+    },
+    medico: doctorId || 5,
+    peso: Number(weight),
+    altura: Number(height)
+  }),
+  searchRecord: ({ cpf }) => api.post('/consulta/consultar-prontuario', {
+    cpf
+  }),
+  registerRecipe: ({ medicines, quantity, use, description, via, attendanceId }) => api.post('/receita/cadastrar-prescricao', {
+    quantidadeUso: use,
+    quantidadeDiaria: quantity,
+    medicamento: {
+      nome: medicines
+    },
+    receita: {
+      descricao: description,
+      segundaVia: via === 'SECOND',
+      atendimento: attendanceId
+    }
+  }),
+  searchRecipe: ({ medicines }) => api.post('/receita/consultar-receitas-filtro', {
+    receita: null,
+    dataEmissao: null,
+    medicamento: medicines
+  }),
+  getRecipes: ({ attendanceId }) => api.get(`/receita/consultar-receitas/${attendanceId}`)
 }
 
 export default Api

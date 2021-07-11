@@ -5,13 +5,22 @@ import Input from '../../components/Input'
 import Button from '../../components/Button'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
+import { Actions as DialogActions } from '../../reducers/dialog'
+import { Actions as RecipeActions } from '../../reducers/recipe'
+import useRecord from '../../hooks/useRecord'
+import useRecipe from '../../hooks/useRecipe'
 
 const RevenueScreen = (): React.Node => {
   const dispatch = useDispatch()
-  const { register, handleSubmit } = useForm()
-  const onSubmit = data => alert(JSON.stringify(data))
+  const { register, handleSubmit, setValue } = useForm()
+  const onSubmit = data => dispatch(RecipeActions.ui.requestRegisterRecipe(data))
+
+  useRecord({ setValue })
+  useRecipe({ setValue })
+
   const handleSearch = (e) => {
     e.preventDefault()
+    dispatch(DialogActions.ui.openDialog('RECIPE'))
   }
 
   return (
@@ -33,10 +42,7 @@ const RevenueScreen = (): React.Node => {
         </div>
 
         <div className='row-revenue-select'>
-          <div>
-            <Input data={[{ label: '1ª Via Farmácia', value: 'FIRST' }, { label: '2ª via Paciente', value: 'SECOND' }]} inputType='radio' name='via' {...register('via')} />
-          </div>
-          <Input label='Data' width={0.3} {...register('revenueDate')} />
+          <Input data={[{ label: '1ª Via Farmácia', value: 'FIRST' }, { label: '2ª via Paciente', value: 'SECOND' }]} inputType='radio' name='via' {...register('via')} />
         </div>
 
         <div className='row-buttons'>
