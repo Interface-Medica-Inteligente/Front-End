@@ -45,9 +45,12 @@ const RevenueScreen = (): React.Node => {
           <Input data={[{ label: '1ª Via Farmácia', value: 'FIRST' }, { label: '2ª via Paciente', value: 'SECOND' }]} inputType='radio' name='via' {...register('via')} />
         </div>
 
-        <div className='row-buttons'>
-          <Button title='Buscar Receita' color='#142585' onClick={handleSearch} />
-          <Button title='Cadastrar' />
+        <div className='row-revenue'>
+          <Button title='Gerar PDF' />
+          <div className='row-buttons'>
+            <Button title='Buscar Receita' color='#142585' onClick={handleSearch} />
+            <Button title='Cadastrar' />
+          </div>
         </div>
       </form>
     </div>

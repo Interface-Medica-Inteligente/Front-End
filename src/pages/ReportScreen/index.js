@@ -91,7 +91,7 @@ const ReportScreen = (): React.Node => {
           <Input label='Relatar' width={1} {...register('report')} />
         </div> */}
         <div className='row-report-button-add'>
-          <Button title='Imprimir' />
+          <Button title='Gerar PDF' />
         </div>
       </div>
     </form>
