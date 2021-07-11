@@ -5,23 +5,41 @@ import Input from '../../components/Input'
 import Button from '../../components/Button'
 import { useForm } from 'react-hook-form'
 import useRecord from '../../hooks/useRecord'
+import { useDispatch } from 'react-redux'
+import { Actions as ReportActions } from '../../reducers/report'
+import Api from '../../services/api'
 
 const ReportScreen = (): React.Node => {
-  const { register, handleSubmit, setValue } = useForm()
+  const dispatch = useDispatch()
+  const { register, handleSubmit, setValue, getValues } = useForm()
 
   useRecord({ setValue })
 
-  const onSubmit = data => alert(JSON.stringify(data))
+  const onSubmit = data => dispatch(ReportActions.ui.requestRegisterReport(data))
 
-  const handleSearch = (e) => {
-    e.preventDefault()
+  const onBlurCNES = () => {
+    const cnes = getValues('cnes')
+    Api.getEstablishmentName({ cnes }).then((response) => {
+      setValue('establishmentName', response.data.nomeEstabelecimento)
+    }).catch(() => {
+      setValue('establishmentName', '')
+    })
+  }
+
+  const onBlurCid = () => {
+    const cid = getValues('cid')
+    Api.getDiagnosis({ cid }).then((response) => {
+      setValue('diagnosis', response.data.descricao)
+    }).catch(() => {
+      setValue('diagnosis', '')
+    })
   }
 
   return (
     <form className='container-report' onSubmit={handleSubmit(onSubmit)}>
       <div className='card-report'>
         <div className='row-report'>
-          <Input label='Código do CNES' width={0.3} {...register('cnes')} />
+          <Input label='Código do CNES' width={0.3} {...register('cnes')} onBlur={onBlurCNES} />
           <Input label='Nome do estabelecimento de saúde solicitante' width={0.7} {...register('establishmentName')} />
         </div>
 
@@ -57,7 +75,7 @@ const ReportScreen = (): React.Node => {
 
       <div className='card-report'>
         <div className='row-report'>
-          <Input label='CID-10' width={0.2} {...register('cid')} />
+          <Input label='CID-10' width={0.2} {...register('cid')} onBlur={onBlurCid} />
           <Input label='Diagnóstico' width={0.8} {...register('diagnosis')} />
         </div>
         <div className='row-report'>
@@ -69,9 +87,9 @@ const ReportScreen = (): React.Node => {
             <Input data={[{ label: 'Sim', value: 'YES' }, { label: 'Não', value: 'NO' }]} inputType='radio' name='treatment ' {...register('treatment')} />
           </div>
         </div>
-        <div className='row-report'>
+        {/* <div className='row-report'>
           <Input label='Relatar' width={1} {...register('report')} />
-        </div>
+        </div> */}
         <div className='row-report-button-add'>
           <Button title='Imprimir' />
         </div>

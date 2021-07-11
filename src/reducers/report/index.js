@@ -1,16 +1,13 @@
 import { combineReducers } from 'redux'
 
 import ui from './ui'
-import entity from './entity'
 
 export const Actions = {
-  ui: ui.actions,
-  entities: entity.actions
+  ui: ui.actions
 }
 
 const reducers = combineReducers({
-  ui: ui.reducer,
-  entities: entity.reducer
+  ui: ui.reducer
 })
 
 export default reducers

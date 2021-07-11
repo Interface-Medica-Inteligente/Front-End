@@ -23,7 +23,8 @@ function * requestRegisterRecipe (action): Saga<*> {
 
 function * requestFilterRecipe (action): Saga<*> {
   const { payload } = action
-  const response = yield call(Api.searchRecipe, payload)
+  const attendanceId = yield select(attendanceSelector.getAttendanceId)
+  const response = yield call(Api.searchRecipe, { attendanceId, ...payload })
 
   if (!response.ok) {
     alert('Erro ao realizar busca')
@@ -54,7 +55,6 @@ export default function * sagas (): Saga<*> {
   yield all([
     takeLatest(RecipeActions.ui.requestFilterRecipe, requestFilterRecipe),
     takeLatest(RecipeActions.ui.requestRecipes, requestRecipes),
-    takeLatest(RecipeActions.ui.requestRegisterRecipe, requestRegisterRecipe),
-
+    takeLatest(RecipeActions.ui.requestRegisterRecipe, requestRegisterRecipe)
   ])
 }

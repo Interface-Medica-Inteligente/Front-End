@@ -13,8 +13,8 @@ export const transformRecord = (data: any) => {
 
 export const transformRecipes = (data: any[]) => {
   return data.map(recipe => ({
-    id: recipe.id,
-    revenueDate: recipe.dataEmissao,
-    medicines: recipe.prescricao[0].nome
+    id: recipe.receita,
+    revenueDate: recipe.dataAtendimento,
+    medicines: recipe.medicamentos[0].nome
   }))
 }

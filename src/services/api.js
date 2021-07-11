@@ -47,12 +47,13 @@ const Api = {
       atendimento: attendanceId
     }
   }),
-  searchRecipe: ({ medicines }) => api.post('/receita/consultar-receitas-filtro', {
-    receita: null,
-    dataEmissao: null,
+  searchRecipe: ({ medicines, attendanceId }) => api.post('/receita/consultar-receitas-filtro', {
+    atendimento: attendanceId,
     medicamento: medicines
   }),
-  getRecipes: ({ attendanceId }) => api.get(`/receita/consultar-receitas/${attendanceId}`)
+  getRecipes: ({ attendanceId }) => api.get(`/receita/consultar-receitas/${attendanceId}`),
+  getEstablishmentName: ({ cnes }) => api.get(`/registro-atendimento/consultar-cnes/${cnes}`),
+  getDiagnosis: ({ cid }) => api.get(`/registro-atendimento/consultar-cid/${cid}`)
 }
 
 export default Api
