@@ -3,9 +3,7 @@ import * as React from 'react'
 import './styles.css'
 import Input from '../../components/Input'
 import Button from '../../components/Button'
-import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { Actions as DoctorActions } from '../../reducers/doctor'
 import { useForm } from 'react-hook-form'
 
 const RevenueScreen = (): React.Node => {
@@ -18,7 +16,7 @@ const RevenueScreen = (): React.Node => {
 
   return (
     <div className='container-revenue'>
-      <form className='card' onSubmit={handleSubmit(onSubmit)}>
+      <form className='card-revenue' onSubmit={handleSubmit(onSubmit)}>
         <div className='row-revenue'>
           <Input label='Paciente' width={1} {...register('name')} />
         </div>
@@ -36,14 +34,13 @@ const RevenueScreen = (): React.Node => {
 
         <div className='row-revenue-select'>
           <div>
-            <Input label='1ª Via Farmácia' width={0.2} />
-            <Input label='2ª via Paciente' width={0.2} />
+            <Input data={[{ label: '1ª Via Farmácia', value: 'FIRST' }, { label: '2ª via Paciente', value: 'SECOND' }]} inputType='radio' name='via' {...register('via')} />
           </div>
           <Input label='Data' width={0.3} {...register('revenueDate')} />
         </div>
 
         <div className='row-buttons'>
-          <Button title='Buscar Receita' onClick={handleSearch} />
+          <Button title='Buscar Receita' color='#142585' onClick={handleSearch} />
           <Button title='Cadastrar' />
         </div>
       </form>

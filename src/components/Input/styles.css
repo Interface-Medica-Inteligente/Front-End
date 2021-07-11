@@ -27,6 +27,19 @@
     color: #000000;
 }
 
+label {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+
+label + label {
+    padding-left: 20px;
+}
+
 .input-text::placeholder {
     font-family: Roboto;
     font-style: normal;

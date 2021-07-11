@@ -18,7 +18,7 @@ const ReportScreen = (): React.Node => {
 
   return (
     <form className='container-report' onSubmit={handleSubmit(onSubmit)}>
-      <div className='card' >
+      <div className='card-report'>
         <div className='row-report'>
           <Input label='Código do CNES' width={0.3} {...register('cnes')} />
           <Input label='Nome do estabelecimento de saúde solicitante' width={0.7} {...register('establishmentName')} />
@@ -34,7 +34,7 @@ const ReportScreen = (): React.Node => {
           <Input label='Altura do paciente(cm)' width={0.15} {...register('height')} />
         </div>
       </div>
-      <div className='card'>
+      <div className='card-report'>
         <div className='row-report'>
           <div className='container-medicines'>
             <p className='title'>Medicamentos</p>
@@ -54,7 +54,7 @@ const ReportScreen = (): React.Node => {
         </div>
       </div>
 
-      <div className='card'>
+      <div className='card-report'>
         <div className='row-report'>
           <Input label='CID-10' width={0.2} {...register('cid')} />
           <Input label='Diagnóstico' width={0.8} {...register('diagnosis')} />
@@ -65,8 +65,7 @@ const ReportScreen = (): React.Node => {
         <div>
           <p>Paciente realizou tratamento prévio ou está em tratamento da doença?:</p>
           <div className='row-report'>
-            <Input label='Sim' width={0.1} />
-            <Input label='Não' width={0.1} />
+            <Input data={[{ label: 'Sim', value: 'YES' }, { label: 'Não', value: 'NO' }]} inputType='radio' name='p' {...register('p')} />
           </div>
         </div>
         <div className='row-report'>

@@ -19,7 +19,7 @@ const MedicalRecordScreen = (): React.Node => {
 
   return (
     <div className='container-medical-record'>
-      <form className='card' onSubmit={handleSubmit(onSubmit)}>
+      <form className='card-medical-record' onSubmit={handleSubmit(onSubmit)}>
         <div className='row-form'>
           <Input label='Paciente' width={1} {...register('name')} />
         </div>
@@ -44,7 +44,7 @@ const MedicalRecordScreen = (): React.Node => {
         </div>
 
         <div className='row-buttons'>
-          <Button title='Buscar Prontuário' onClick={handleSearch} />
+          <Button title='Buscar Prontuário' color='#142585' onClick={handleSearch} />
           <Button title='Cadastrar' />
         </div>
       </form>
