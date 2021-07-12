@@ -17,7 +17,6 @@ const ReportScreen = (): React.Node => {
     if (key === 'height') {
       return Number(value) * 100
     }
-    
     return value
   }
 
