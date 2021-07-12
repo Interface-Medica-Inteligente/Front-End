@@ -24,7 +24,7 @@ const RegisterScreen = (): React.Node => {
         <Input placeholder='CRM' {...register('crm')} />
         <Input placeholder='Sexo' options={genre} inputType='select' {...register('genre')} />
         <Input placeholder='E-mail' {...register('email')} />
-        <Input placeholder='Senha' {...register('password')} />
+        <Input placeholder='Senha' {...register('password')} type='password' />
         <div className='container-buttons'>
           <Button title='Cadastrar' onClick={handleSubmit} />
           <div className='container-button-login'>

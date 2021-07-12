@@ -7,7 +7,7 @@ export type State = {
 }
 
 const initialState: State = {
-  visible: true,
+  visible: false,
   type: null
 }
 

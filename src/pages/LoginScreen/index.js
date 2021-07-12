@@ -19,7 +19,7 @@ const LoginScreen = (): React.Node => {
       <form className='content' onSubmit={handleSubmit(onSubmit)}>
         <p className='login-text'>Login</p>
         <Input placeholder='E-mail' {...register('email')} />
-        <Input placeholder='Senha' {...register('password')} />
+        <Input placeholder='Senha' {...register('password')} type='password' />
         <Button title='Entrar' />
       </form>
       <div className='container-button-register'>
