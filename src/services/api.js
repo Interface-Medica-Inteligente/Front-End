@@ -64,13 +64,26 @@ const Api = {
     codigoCid10: cid,
     diagnostico: diagnosis,
     anamnese,
-    consultaPrevia: response[treatment]
+    consultaPrevia: response1[treatment]
+  }),
+  getRecipePDF: ({ name, medicines, quantity, use, description, via }) => api.post('/consulta/gerar-documento-receita', {
+    nomePaciente: name,
+    medicamento: medicines,
+    quantidade: String(quantity),
+    uso: use,
+    descricao: description,
+    via: response2[via]
   })
 }
 
-const response = {
+const response1 = {
   YES: 'Sim',
   NO: 'Não'
+}
+
+const response2 = {
+  FIRST: '1ª',
+  SECOND: '2ª'
 }
 
 export default Api

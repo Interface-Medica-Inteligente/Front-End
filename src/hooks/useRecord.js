@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useSelector } from 'react-redux'
 import recordSelector from '../selectors/recordSelector'
 
-const useRecord = ({ setValue }) => {
+const useRecord = ({ setValue, transform = null }) => {
   const record = useSelector(recordSelector.getRecord)
 
   React.useEffect(() => {
@@ -10,7 +10,8 @@ const useRecord = ({ setValue }) => {
     keys.forEach((key) => {
       const item = record[key]
       if (item) {
-        setValue(key, item)
+        const value = !transform ? item : transform(key, item)
+        setValue(key, value)
       }
     })
   }, [record])

@@ -1,7 +1,7 @@
-export const downloadPDF = (pdf) => {
+export const downloadPDF = (pdf, name) => {
   const linkSource = `data:application/pdf;base64,${pdf}`
   const downloadLink = document.createElement('a')
-  const fileName = 'laudo.pdf'
+  const fileName = `${name}.pdf`
 
   downloadLink.href = linkSource
   downloadLink.download = fileName

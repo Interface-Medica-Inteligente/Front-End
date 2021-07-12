@@ -21,6 +21,9 @@ const recipeUiSlice = createSlice({
     requestFilterRecipe: () => {
       return { fetching: true, error: null }
     },
+    requestPDFRecipe: () => {
+      return { fetching: true, error: null }
+    },
     requestRecipes: () => {
       return { fetching: true, error: null }
     },

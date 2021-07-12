@@ -13,7 +13,15 @@ const ReportScreen = (): React.Node => {
   const dispatch = useDispatch()
   const { register, handleSubmit, setValue, getValues } = useForm()
 
-  useRecord({ setValue })
+  const transform = (key, value) => {
+    if (key === 'height') {
+      return Number(value) * 100
+    }
+    
+    return value
+  }
+
+  useRecord({ setValue, transform })
 
   const onSubmit = data => dispatch(ReportActions.ui.requestRegisterReport(data))
 

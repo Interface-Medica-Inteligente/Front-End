@@ -13,10 +13,15 @@ import useRecipe from '../../hooks/useRecipe'
 const RevenueScreen = (): React.Node => {
   const dispatch = useDispatch()
   const { register, handleSubmit, setValue } = useForm()
+
   const onSubmit = data => dispatch(RecipeActions.ui.requestRegisterRecipe(data))
 
   useRecord({ setValue })
   useRecipe({ setValue })
+
+  const handlePDFRecipe = (data) => {
+    dispatch(RecipeActions.ui.requestPDFRecipe(data))
+  }
 
   const handleSearch = (e) => {
     e.preventDefault()
@@ -46,7 +51,7 @@ const RevenueScreen = (): React.Node => {
         </div>
 
         <div className='row-revenue'>
-          <Button title='Gerar PDF' />
+          <Button title='Gerar PDF' onClick={handleSubmit(handlePDFRecipe)} />
           <div className='row-buttons'>
             <Button title='Buscar Receita' color='#142585' onClick={handleSearch} />
             <Button title='Cadastrar' />

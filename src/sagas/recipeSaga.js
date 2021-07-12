@@ -6,6 +6,7 @@ import { Actions as RecipeActions } from '../reducers/recipe'
 import Api from '../services/api'
 import { transformRecipes } from '../transforms'
 import attendanceSelector from '../selectors/attendanceSelector'
+import { downloadPDF } from '../utils'
 
 function * requestRegisterRecipe (action): Saga<*> {
   const { payload } = action
@@ -51,10 +52,18 @@ function * requestRecipes (): Saga<*> {
   }
 }
 
+function * requestPDFRecipe (action): Saga<*> {
+  const { payload } = action
+  const response = yield call(Api.getRecipePDF, payload)
+
+  downloadPDF(response.data, 'receita')
+}
+
 export default function * sagas (): Saga<*> {
   yield all([
     takeLatest(RecipeActions.ui.requestFilterRecipe, requestFilterRecipe),
     takeLatest(RecipeActions.ui.requestRecipes, requestRecipes),
-    takeLatest(RecipeActions.ui.requestRegisterRecipe, requestRegisterRecipe)
+    takeLatest(RecipeActions.ui.requestRegisterRecipe, requestRegisterRecipe),
+    takeLatest(RecipeActions.ui.requestPDFRecipe, requestPDFRecipe)
   ])
 }

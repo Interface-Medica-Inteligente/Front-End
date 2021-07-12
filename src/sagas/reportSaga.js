@@ -9,7 +9,7 @@ function * requestRegisterReport (action): Saga<*> {
   const { payload } = action
   const response = yield call(Api.getReportPDF, payload)
 
-  downloadPDF(response.data)
+  downloadPDF(response.data, 'laudo')
 }
 
 export default function * sagas (): Saga<*> {
