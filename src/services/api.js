@@ -53,7 +53,24 @@ const Api = {
   }),
   getRecipes: ({ attendanceId }) => api.get(`/receita/consultar-receitas/${attendanceId}`),
   getEstablishmentName: ({ cnes }) => api.get(`/registro-atendimento/consultar-cnes/${cnes}`),
-  getDiagnosis: ({ cid }) => api.get(`/registro-atendimento/consultar-cid/${cid}`)
+  getDiagnosis: ({ cid }) => api.get(`/registro-atendimento/consultar-cid/${cid}`),
+  getReportPDF: ({ cnes, establishmentName, cid, name, momName, weight, height, anamnese, diagnosis, treatment }) => api.post('/consulta/gerar-documento-laudo', {
+    codigoCnes: cnes,
+    nomeEstabelecimento: establishmentName,
+    nomePaciente: name,
+    nomeMae: momName,
+    peso: `${weight} kg`,
+    altura: `${height} cm`,
+    codigoCid10: cid,
+    diagnostico: diagnosis,
+    anamnese,
+    consultaPrevia: response[treatment]
+  })
+}
+
+const response = {
+  YES: 'Sim',
+  NO: 'Não'
 }
 
 export default Api
