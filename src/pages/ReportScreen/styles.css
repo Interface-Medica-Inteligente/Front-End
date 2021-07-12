@@ -1,0 +1,50 @@
+.container-report {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.card-report {
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    min-width: 88%;
+    flex-direction: column;
+    margin-top: 50px;
+    padding: 20px 30px;
+}
+
+.row-report {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    justify-content: space-between;
+}
+
+.row-report-button-add {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.row-buttons {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    justify-content: space-around;
+}
+
+.container-medicines {
+    width: 65%;
+}
+
+.container-month {
+    width: 25%;
+}

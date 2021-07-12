@@ -1,5 +1,10 @@
 .container-input {
-    margin-top: 19px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    margin-top: 5px;
     margin-bottom: 19px;
     border: 2px solid #828282;
     border-radius: 10px;
@@ -8,9 +13,12 @@
     display: flex;
     align-items: center;
     padding: 0px 17px;
+    background-color: #FFFFFF;
 }
 
 .input-text {
+    display: flex;
+    flex: 1;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -19,7 +27,29 @@
     color: #000000;
 }
 
+label {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+
+label + label {
+    padding-left: 20px;
+}
+
 .input-text::placeholder {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #828282;
+}
+
+select:invalid {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;

@@ -1,0 +1,43 @@
+.container-revenue {
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-revenue {
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+}
+
+.row-revenue {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    justify-content: space-between;
+}
+
+.row-revenue-select {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.row-buttons {
+    display: flex;
+    width: 40%;
+    flex-direction: row;
+    align-self: flex-end;
+    justify-content: space-around;
+}
+
